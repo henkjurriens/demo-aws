@@ -94,9 +94,9 @@ PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazo
     function AnonLog() {
 
         // Configure the credentials provider to use your identity pool
-        AWS.config.region = 'eu-west-3'; // Region
+        AWS.config.region = 'us-east-1'; // Region
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: 'https://eu-west-3.console.aws.amazon.com/iam/home?#/roles/facedetect-henkjurriens-CognitoDefaultUnauthentica-166Z6HKRVKFG8',
+            IdentityPoolId: 'us-east-1:4c8c3c1f-49df-4dd4-8b3b-eac171faf569',
         });
         // Make the call to obtain credentials
         AWS.config.credentials.get(function () {
