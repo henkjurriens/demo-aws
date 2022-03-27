@@ -80,8 +80,9 @@ PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazo
                 try {
                     image = atob(e.target.result.split("data:image/jpeg;base64,")[1]);
                     var img = document.createElement("img");
+                    img.id = 'face';
                     img.src = e.target.result;
-                    img.style= "heigth: 200px";
+                    img.style= "height: 400px";
                     var block = document.getElementById("image");
                     block.appendChild(img);
                 } catch (e) {
