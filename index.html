@@ -9,13 +9,27 @@ PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazo
     <script type='text/javascript' src="./amazon-cognito-identity.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.16.0.min.js"></script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rekognition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-<H1>Age Estimator</H1>
-<input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
-<p id="opResult"></p>
+<body class="bg-gray-300">
+<div class="flex bg-white h-24 ">
+    <image src="images/trivlogo.webp" alt="logo" class="pt-5 mx-10 h-20"/>
+</div>
+
+<div class="flex-row mx-auto w-1/2 mt-32">
+    <h1 class="text-3xl mb-5 font-bold">Age Estimator</h1>
+
+    <div class="flex" style="max-height: 250px">
+        <p><input type="file" name="fileToUpload" id="fileToUpload" accept="image/*"></p>
+        <div id="image" ></div>
+    </div>
+
+    <p id="opResult"></p>
+
+    </div>
 </body>
 <script>
 
@@ -65,7 +79,11 @@ PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazo
                 var jpg = true;
                 try {
                     image = atob(e.target.result.split("data:image/jpeg;base64,")[1]);
-
+                    var img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.style= "heigth: 200px";
+                    var block = document.getElementById("image");
+                    block.appendChild(img);
                 } catch (e) {
                     jpg = false;
                 }
